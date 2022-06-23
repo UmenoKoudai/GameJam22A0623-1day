@@ -12,7 +12,8 @@ public class CountText : MonoBehaviour
 
     Text text;
     // ƒJƒEƒ“ƒg‚ª‚±‚ê‚É‚È‚Á‚½‚ç‰B‚·
-    int _invisibleCount;
+    [Range(0,3)]
+    [SerializeField] int _invisibleCount;
     
     void Awake()
     {
@@ -33,5 +34,6 @@ public class CountText : MonoBehaviour
     public void SetCount(int count)
     {
         text.text = count.ToString();
+        if (_invisibleCount >= count) text.color = Color.clear;
     }
 }
