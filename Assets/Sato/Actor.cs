@@ -12,14 +12,17 @@ public class Actor : MonoBehaviour
     [SerializeField] float _wait;
     [SerializeField] GameObject _stand;
     [SerializeField] GameObject _attacked;
+    [SerializeField] GameObject _slashEff;
     [SerializeField] bool _isPlayer;
 
-    public delegate void Attack(bool b);
+    public delegate IEnumerator Attack(bool b);
     public Attack _attack;
+
+    public Coroutine _autoAction;
 
     void Start()
     {
-        StartCoroutine(AutoAction());
+        _autoAction = StartCoroutine(AutoAction());
     }
 
     void Update()
@@ -29,9 +32,12 @@ public class Actor : MonoBehaviour
 
     public void Action()
     {
-        _attack.Invoke(_isPlayer);
+        StartCoroutine(_attack.Invoke(_isPlayer));
         _stand.SetActive(false);
         _attacked.SetActive(true);
+        Vector3 pos = transform.position;
+        int dir = _isPlayer == true ? 1 : -1;
+        Instantiate(_slashEff, new Vector3(pos.x + (3.5f * dir), pos.y, pos.z), Quaternion.identity);;
     }
 
     // éwíËÇ≥ÇÍÇΩïbå„Ç…çUåÇÇ∑ÇÈ
