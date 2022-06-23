@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene2 : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
-    [SerializeField] string _sceneName; 
+    [Header("ˆÚ“®‚µ‚½‚¢ƒV[ƒ“–¼‚ğ“ü—Í")] [SerializeField] string _sceneName; 
     public void ChangeScene()
     {
         Debug.Log("Click");
