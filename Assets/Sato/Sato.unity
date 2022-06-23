@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 980227009}
   - component: {fileID: 980227010}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: GameSceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +781,6 @@ GameObject:
   - component: {fileID: 1867742404}
   - component: {fileID: 1867742403}
   - component: {fileID: 1867742402}
-  - component: {fileID: 1867742405}
   m_Layer: 5
   m_Name: AttackButton
   m_TagString: Untagged
@@ -915,15 +914,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867742400}
   m_CullTransparentMesh: 1
---- !u!114 &1867742405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867742400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4608aa90d19b0048b749c7f37f5a823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

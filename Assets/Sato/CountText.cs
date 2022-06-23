@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountText : MonoBehaviour
 {
@@ -27,5 +28,10 @@ public class CountText : MonoBehaviour
     public void SetCount(int count)
     {
         text.text = count.ToString();
+    }
+
+    void hoge()
+    {
+        SceneManager.load
     }
 }
