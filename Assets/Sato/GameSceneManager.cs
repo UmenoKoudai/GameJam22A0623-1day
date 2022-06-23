@@ -13,9 +13,17 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] CountText _countText;
     // 攻撃が可能になるまでのカウント
     [SerializeField] int _count;
+    // サウンドマネージャー
+    SoundManager soundManager;
+
+    void Awake()
+    {
+        soundManager = GetComponent<SoundManager>();
+    }
 
     void Start()
     {
+        soundManager.Play("SE_てろれろーん");
         _enemy._attack = Attack;
         _countText.SetCount(_count);
         StartCoroutine(Timer());
@@ -43,5 +51,6 @@ public class GameSceneManager : MonoBehaviour
     {
         (string, string) str = isPlayer == true ? ("green", "Player") : ("red", "Enemy");
         Debug.Log($"<color={str.Item1}>{str.Item2}が攻撃した</color>");
+        soundManager.Play("SE_斬撃");
     }
 }
