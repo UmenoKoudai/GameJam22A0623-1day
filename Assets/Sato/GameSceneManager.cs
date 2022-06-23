@@ -8,6 +8,7 @@ public class GameSceneManager : MonoBehaviour
     /* ゲーム本編のシーンマネージャー */
     // /////////////////////////////////
 
+    [SerializeField] GameSceneUI _gameSceneUI;
     [SerializeField] Actor _player;
     [SerializeField] Actor _enemy;
     [SerializeField] GameObject _attackButton;
@@ -33,7 +34,10 @@ public class GameSceneManager : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetMouseButtonUp(0))
+        {
+            StartCoroutine(_gameSceneUI.ActivePenaltyPanel());
+        }
     }
 
     // ゲーム開始からカウントを始める
@@ -49,9 +53,14 @@ public class GameSceneManager : MonoBehaviour
     }
 
     // 攻撃
-    public void Attack(bool isPlayer)
+    public IEnumerator Attack(bool isPlayer)
     {
         soundManager.Play("SE_斬撃");
+        _player.StopCoroutine(_player._autoAction);
+        _enemy.StopCoroutine(_enemy._autoAction);
+        _attackButton.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        _gameSceneUI.ActiveResultItem(isPlayer);
         Debug.Log("攻撃しました");
     }
 }
