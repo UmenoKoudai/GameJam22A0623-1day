@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class SceneManager : MonoBehaviour
+
+public class GameSceneManager : MonoBehaviour
 {
     // /////////////////////////////////
     /* ゲーム本編のシーンマネージャー */
