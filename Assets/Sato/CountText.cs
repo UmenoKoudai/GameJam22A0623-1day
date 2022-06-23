@@ -14,9 +14,14 @@ public class CountText : MonoBehaviour
     // ƒJƒEƒ“ƒg‚ª‚±‚ê‚É‚È‚Á‚½‚ç‰B‚·
     int _invisibleCount;
     
-    void Start()
+    void Awake()
     {
         text = GetComponent<Text>();
+    }
+
+    void Start()
+    {
+
     }
 
     void Update()
@@ -28,10 +33,5 @@ public class CountText : MonoBehaviour
     public void SetCount(int count)
     {
         text.text = count.ToString();
-    }
-
-    void hoge()
-    {
-        SceneManager.load
     }
 }
