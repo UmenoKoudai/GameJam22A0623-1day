@@ -499,7 +499,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 980227008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c2b756bc36c4f40afc6d756ace4644, type: 3}
+  m_Script: {fileID: 11500000, guid: e408a8935ffcb444c969f3c4e867b6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 1133254350}
@@ -853,7 +853,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 980227010}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameSceneManager, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 6
         m_Arguments:

@@ -9,6 +9,6 @@ public class LoadScene2 : MonoBehaviour
     public void ChangeScene()
     {
         Debug.Log("Click");
-        
+        SceneManager.
     }
 }
