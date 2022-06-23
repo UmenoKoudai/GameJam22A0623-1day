@@ -8,7 +8,8 @@ public class GameSceneManager : MonoBehaviour
     /* ゲーム本編のシーンマネージャー */
     // /////////////////////////////////
 
-    [SerializeField] Enemy _enemy;
+    [SerializeField] Actor _player;
+    [SerializeField] Actor _enemy;
     [SerializeField] GameObject _attackButton;
     [SerializeField] CountText _countText;
     // 攻撃が可能になるまでのカウント
@@ -24,6 +25,7 @@ public class GameSceneManager : MonoBehaviour
     void Start()
     {
         soundManager.Play("SE_てろれろーん");
+        _player._attack = Attack;
         _enemy._attack = Attack;
         _countText.SetCount(_count);
         StartCoroutine(Timer());
@@ -49,8 +51,7 @@ public class GameSceneManager : MonoBehaviour
     // 攻撃
     public void Attack(bool isPlayer)
     {
-        (string, string) str = isPlayer == true ? ("green", "Player") : ("red", "Enemy");
-        Debug.Log($"<color={str.Item1}>{str.Item2}が攻撃した</color>");
         soundManager.Play("SE_斬撃");
+        Debug.Log("攻撃しました");
     }
 }
