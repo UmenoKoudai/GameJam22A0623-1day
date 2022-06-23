@@ -12,8 +12,14 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene(_sceneName);
     }
 
-    public void Audio(float _delay)
+    public void Audio()
     {
-        Invoke("ChageScene", _delay);
+        StartCoroutine(Enumerator());
+
+        IEnumerator Enumerator()
+        {
+            yield return new WaitForSeconds(1.0f);
+            ChangeScene();
+        }
     }
 }
