@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    [Header("移動したいシーン名を入力")] [SerializeField] string _sceneName; 
+    [Header("移動したいシーン名を入力")] [SerializeField] string _sceneName;
     public void ChangeScene()
     {
         Debug.Log("Click");
         SceneManager.LoadScene(_sceneName);
+    }
+
+    public void Audio(float _delay)
+    {
+        Invoke("ChageScene", _delay);
     }
 }
